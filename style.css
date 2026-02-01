@@ -1,0 +1,182 @@
+body {
+  /* Font and Text */
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  min-height: 100vh;
+
+  /* Background Image Settings */
+  background-image: url("bg1.png"); /* Ensure your file is named bg2.avif */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-color: #dbeafe; 
+}
+
+.container {
+  /* Increased padding to sit perfectly in the center of the floral frame */
+  padding-top: 150px;
+  max-width: 800px;
+}
+
+h1 {
+  /* Font and Style */
+  font-family: 'Dancing Script', cursive;
+  font-size: 7rem; 
+  font-weight: bold;
+  
+  /* Baby Blue Colors */
+  color: #A7C7E7; 
+  
+  /* This creates the thin blue outline */
+  -webkit-text-stroke: 1.5px #5D92C1; 
+  
+  /* Soft white glow behind the blue outline */
+  text-shadow: 4px 4px 10px rgba(255, 255, 255, 0.8);
+  
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+p {
+  font-size: 2.5rem; 
+  color: #B22222; /* Darker Red */
+  font-weight: bold;
+  margin-bottom: 40px;
+
+  /* This creates the thin black outline */
+  -webkit-text-stroke: 1.5px black; 
+  
+  /* Adding a slight shadow to make it pop from the background */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Space between the two large buttons */
+}
+
+button {
+  /* Much larger buttons */
+transition: all 0.2s ease-out;
+  padding: 25px 60px; 
+  font-size: 28px;    
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+.yes-btn {
+  /* A soft, romantic light purple */
+  background-color: #D8BFD8; 
+  color: #4B0082; /* Deep indigo text for readability */
+transition: width 0.3s ease, height 0.3s ease, font-size 0.3s ease, top 0.3s ease, left 0.3s ease;
+}
+
+.no-btn {
+ background-color: #C1E1C1; 
+  color: #2F4F4F; /* Dark slate text for better contrast */
+}
+
+button:hover {
+  transform: scale(1.1);
+  /* This adds a soft glow that matches the button color when you hover */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+/* --- Heart Animation Styles --- */
+
+.heart {
+  position: fixed;
+  bottom: -20px; /* Start just below the screen */
+  color: #B22222; /* Your Firebrick Red */
+  font-size: 20px;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1; /* Set to 1 to ensure they are visible over the background */
+  animation: floatUp 4s linear forwards; /* 'forwards' keeps the state at the end */
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(45deg); /* Float past the top */
+    opacity: 0;
+  }
+}
+/* Container to help with spacing */
+.home-container {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+/* The Square Base */
+.heart-home-btn {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #A7C7E7; /* Your Baby Blue */
+    transform: rotate(-45deg);
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* The Two Round Humps of the Heart */
+.heart-home-btn::before,
+.heart-home-btn::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #A7C7E7;
+    border-radius: 50%;
+}
+
+.heart-home-btn::before {
+    top: -25px;
+    left: 0;
+}
+
+.heart-home-btn::after {
+    left: 25px;
+    top: 0;
+}
+
+/* The Text inside the Heart */
+.heart-home-btn span {
+    position: absolute;
+    width: 70px; /* Wider than the heart to keep text flat */
+    text-align: center;
+    transform: rotate(45deg); /* Counter-rotate to make text horizontal */
+    top: 10px;
+    left: -10px;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+/* Hover Effect: Turns Red and Grows */
+.heart-home-btn:hover,
+.heart-home-btn:hover::before,
+.heart-home-btn:hover::after {
+    background-color: #B22222; /* Your Firebrick Red */
+}
+
+.heart-home-btn:hover {
+    transform: rotate(-45deg) scale(1.2);
+}
